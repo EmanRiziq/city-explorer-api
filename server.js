@@ -1,26 +1,30 @@
-'use strict';
-
+'use strict'
 const express = require('express');
-require('dotenv').config();
-const cors = require('cors');
 const app = express();
+
+
+require('dotenv').config();
+
+
+const handleWeather = require('./modules/weather');
+const handleMovies = require('./modules/movies');
+
+
+
+const cors = require("cors");
 app.use(cors());
-const axios = require('axios');
-const port = process.env.port || 3002;
-const { handleWeather } = require('./modules/weather');
-const { handleMovies } = require('./modules/movies');
 
 
-
-//home router
-app.get('/', (req, res) => {
-  res.status(200).send(['hi', 'hello'])
-});
-
-app.get('/weather', handleWeather)
-app.get('/movies', handleMovies)
-
-
+const port = process.env.PORT 
 app.listen(port, () => {
-  console.log('working port ' + port)
+    console.log(`Server is running on port ${port}`)
 })
+
+
+app.get('/', (_req, res) => {
+    res.send('Hello World')
+}
+)
+
+app.get('/weather', handleWeather);
+app.get('/movies', handleMovies);
