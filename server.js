@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 const axios = require('axios');
-const port = process.env.port || 4001;
+const port = process.env.port || 3002;
 const {handleWeather} = require('./modules/weather');
 const {handleMovies} = require('./modules/movies');
 
