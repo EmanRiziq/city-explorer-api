@@ -37,4 +37,4 @@ class Forecast {
     }
 }
 
-module.exports = { handleWeather }
+module.exports =  handleWeather 

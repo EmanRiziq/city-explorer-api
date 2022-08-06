@@ -37,4 +37,4 @@ class MoviesInfo {
     }
 }
 
-module.exports = { handleMovies }
+module.exports =  handleMovies 
